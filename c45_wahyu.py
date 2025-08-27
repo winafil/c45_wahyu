@@ -11,10 +11,13 @@ from math import log2
 from graphviz import Digraph
 import os
 
+# Judul aplikasi dan informasi mahasiswa
+st.set_page_config(layout="wide", page_title="Klasifikasi Tingkat Permintaan Produk Laut Berdasarkan Musim Menggunakan Decision Tree C4.5")
 
-st.set_page_config(layout="wide", page_title="Analisis Permintaan Produk Laut dengan C4.5")
-
-
+st.title("KLASIFIKASI TINGKAT PERMINTAAN PRODUK LAUT BERDASARKAN MUSIM MENGGUNAKAN DECISION TREE C4.5")
+st.markdown("**Nama Mahasiswa   : WAHYU CAVIN GUNAWAN**")
+st.markdown("**NPM              : 212350112**")
+st.markdown("**Universitas Harapan Medan**")
 st.markdown("""
     <style>
         * {
@@ -141,9 +144,6 @@ def custom_encoder(df, columns):
 
 # Fungsi utama
 def main():
-    st.title("Analisis Tingkat Permintaan Produk Laut pada UD ABI menggunakan Metode C4.5")
-
-    # Upload file 
     st.sidebar.header("Unggah Data")
     file_diupload = st.sidebar.file_uploader("Pilih file CSV/Excel", type=["csv", "xlsx"])
 
@@ -154,7 +154,6 @@ def main():
             else:
                 data = pd.read_excel(file_diupload)
             
-
             st.header("Data Awal")
             st.markdown(df_to_html_table(data, add_index=True), unsafe_allow_html=True)
 
@@ -389,6 +388,8 @@ def main():
 
         except Exception as e:
             st.error(f"Terjadi kesalahan: {str(e)}")
+    else:
+        st.info("Silakan unggah file data CSV atau Excel untuk memulai analisis.")
 
 if __name__ == "__main__":
     main()
