@@ -36,7 +36,7 @@ with col3:
     try:
    
         logo_kampus = Image.open("logo.png")  
-        st.image(logo_kampus, width=150, caption="Logo Universitas")
+        st.image(logo_kampus, width=150, caption="Universitas Harapan Medan")
     except FileNotFoundError:
         st.warning("Logo kampus tidak ditemukan. Pastikan file 'logo.png' ada di direktori yang sama.")
 
