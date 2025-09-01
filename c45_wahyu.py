@@ -10,14 +10,36 @@ from sklearn.preprocessing import LabelEncoder
 from math import log2
 from graphviz import Digraph
 import os
+from PIL import Image
 
-# Judul aplikasi dan informasi mahasiswa
+
 st.set_page_config(layout="wide", page_title="Klasifikasi Tingkat Permintaan Produk Laut Berdasarkan Musim Menggunakan Decision Tree C4.5")
 
-st.title("KLASIFIKASI TINGKAT PERMINTAAN PRODUK LAUT BERDASARKAN MUSIM MENGGUNAKAN DECISION TREE C4.5")
-st.markdown("**Nama Mahasiswa   : WAHYU CAVIN GUNAWAN**")
-st.markdown("**NPM              : 212350112**")
-st.markdown("**Universitas Harapan Medan**")
+
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col1:
+    try:
+
+        foto_mahasiswa = Image.open("wahyu.jpeg")  
+        st.image(foto_mahasiswa, width=150, caption="Foto Mahasiswa")
+    except FileNotFoundError:
+        st.warning("Foto mahasiswa tidak ditemukan. Pastikan file 'wahyu.jpeg' ada di direktori yang sama.")
+
+with col2:
+    st.title("KLASIFIKASI TINGKAT PERMINTAAN PRODUK LAUT BERDASARKAN MUSIM MENGGUNAKAN DECISION TREE C4.5")
+    st.markdown("**Nama Mahasiswa   : WAHYU CAVIN GUNAWAN**")
+    st.markdown("**NPM              : 212350112**")
+    st.markdown("**Universitas Harapan Medan**")
+
+with col3:
+    try:
+   
+        logo_kampus = Image.open("logo.png")  
+        st.image(logo_kampus, width=150, caption="Logo Universitas")
+    except FileNotFoundError:
+        st.warning("Logo kampus tidak ditemukan. Pastikan file 'logo.png' ada di direktori yang sama.")
+
 st.markdown("""
     <style>
         * {
