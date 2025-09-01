@@ -22,7 +22,7 @@ with col1:
     try:
 
         foto_mahasiswa = Image.open("wahyu.jpeg")  
-        st.image(foto_mahasiswa, width=150, caption="Foto Mahasiswa")
+        st.image(foto_mahasiswa, width=150, caption="Wahyu Cavin Gunawan")
     except FileNotFoundError:
         st.warning("Foto mahasiswa tidak ditemukan. Pastikan file 'wahyu.jpeg' ada di direktori yang sama.")
 
